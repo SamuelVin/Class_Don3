@@ -15,7 +15,10 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
+
 $db="pizzastage";
+
+
 // Connexion à la base de données
 $connexion = mysqli_connect($servername, $username, $password, $db);
 
