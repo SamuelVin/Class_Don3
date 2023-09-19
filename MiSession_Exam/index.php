@@ -8,8 +8,24 @@
     <title>Document</title>
 </head>
 <body>
+
+
+
+
     <h1>Titre</h1>
     <h2>Test</h2>
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
