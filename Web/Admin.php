@@ -15,7 +15,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$db="users";
+$db="smiley face";
 // Connexion à la base de données
 $connexion = mysqli_connect($servername, $username, $password, $db);
 
