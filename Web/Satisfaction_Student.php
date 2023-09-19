@@ -14,26 +14,23 @@
     <input type="submit" style="text-align:center;" value=" Retour "></input>
     <a href="../index.php">index.php</a>
 </form>
-
-<h1 style="text-align:center; margin-top: 8%; margin-bottom: 10%">Comment était votre expérience?</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4 justify-content center">
-            <img src="../Image/happy.bmp" class="d-flex" style="margin: auto;"/>
-            <input type="radio" name="choose" class="d-flex" style="margin: auto;"></input>
-        </div>
-        <div class="col-sm-4">
-            <img src="../Image/mid.bmp" class="d-flex" style="margin: auto;"/>
-            <input type="radio" name="choose" class="d-flex" style="margin: auto;"></input>
-        </div>
-        <div class="col-sm-4">
-            <img src="../Image/angry.bmp" class="d-flex" style="margin: auto;"/>
-            <input type="radio" name="choose" class="d-flex" style="margin: auto;"></input>
+    <h1 style="text-align:center; margin-top: 4%; margin-bottom: 3%">Comment était votre expérience?</h1>
+    <div class="container" style="border: solid 2px grey; background-color: #f2f2f2;  border-radius: 100px">
+        <div class="row">
+            <div class="col-sm-4 justify-content center">
+                <img src="../Image/happy2.png" class="d-flex" style="margin: auto; height: 50%"/>
+                <input type="radio" name="choose" class="d-flex" style="margin: auto;"></input>
+            </div>
+            <div class="col-sm-4">
+                <img src="../Image/mid2.png" class="d-flex" style="margin: auto; height: 50%"/>
+                <input type="radio" name="choose" class="d-flex" style="margin: auto;"></input>
+            </div>
+            <div class="col-sm-4">
+                <img src="../Image/angry2.png" class="d-flex" style="margin: auto; height: 50%"/>
+                <input type="radio" name="choose" class="d-flex" style="margin: auto;"></input>
+            </div>
         </div>
     </div>
-</div>
-
-    
 
 <!--
     <div class="d-flex align-items-center justify-content-center">
