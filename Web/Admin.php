@@ -12,13 +12,12 @@
 <?php
 
 // Configuration de la base de données
-$id = "votre _id";
-$username = "votre_username";
-$password = "votre_password";
-$email = "votre_Email";
-
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$db="users";
 // Connexion à la base de données
-$connexion = mysqli_connect($id, $username, $password, $email);
+$connexion = mysqli_connect($servername, $username, $password, $db);
 
 // Vérifier la connexion à la base de données
 if (!$connexion) {
@@ -65,28 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Fermer la connexion à la base de données
         mysqli_close($connexion);
     }
+}
     ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
