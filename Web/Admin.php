@@ -15,7 +15,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$db="users";
+$db="smiley face";
 // Connexion à la base de données
 $connexion = mysqli_connect($servername, $username, $password, $db);
 
@@ -26,7 +26,7 @@ if (!$connexion) {
 // Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Récupérer les valeurs du formulaire
+// Récupérer les valeurs du formulaire
     $nom_utilisateur = $_POST["nom_utilisateur"];
     $mot_de_passe = $_POST["mot_de_passe"];
 
@@ -34,19 +34,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($stmt = mysqli_prepare($connexion, $requete)) {
 
-        // Liaison des paramètres
+// Liaison des paramètres
         mysqli_stmt_bind_param($stmt, "s", $nom_utilisateur);
-
-       // Exécution de la requête
+// Exécution de la requête
         mysqli_stmt_execute($stmt);
 
-        // Récupération des résultats
+// Récupération des résultats
         mysqli_stmt_bind_result($stmt, $id, $nom_utilisateur_db, $mot_de_passe_db);
 
         if (mysqli_stmt_fetch($stmt)) {
-            // Vérifier si le mot de passe est correct
+// Vérifier si le mot de passe est correct
             if (password_verify($mot_de_passe, $mot_de_passe_db)) {
-                // Authentification réussie
+// Authentification réussie
                 session_start();
                 $_SESSION["utilisateur_id"] = $id;
                 header("Location: Admin.php"); // Rediriger vers la page d'accueil
@@ -55,18 +54,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $erreur_message = "Nom d'utilisateur incorrect.";
             }
     
-            // Fermer le statement
+// Fermer le statement
             mysqli_stmt_close($stmt);
         } else {
             die("Erreur de requête: " . mysqli_error($connexion));
         }
         
-        // Fermer la connexion à la base de données
+// Fermer la connexion à la base de données
         mysqli_close($connexion);
     }
 }
     ?>
 
+<body style="background-color:#f8f9fa;">
+
+    <div class="container">
+        <h1>Bienvenue dans la Page d'Administration</h1>
+
+        <!-- Liens vers les pages d'affichage, de modification, d'ajout et de suppression -->
+        <ul>
+            <li><a href="affichage.php">Afficher les données</a></li>
+            <li><a href="modification.php">Modifier les données</a></li>
+            <li><a href="ajout.php">Ajouter des données</a></li>
+            <li><a href="suppression.php">Supprimer des données</a></li>
+        </ul>
+    </div>
+ 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
