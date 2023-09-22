@@ -1,5 +1,5 @@
 <?php
-// Connectez-vous à votre base de données ici
+
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Exécutez la requête d'ajout
     $query = "INSERT INTO votre_table (colonne1, colonne2) VALUES ('$colonne1', '$colonne2')";
     mysqli_query($connexion, $query);
-    
+
     // Redirigez l'utilisateur vers la page d'affichage après l'ajout
     header("Location: Affichage.php");
 }
