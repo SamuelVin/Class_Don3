@@ -1,10 +1,10 @@
 <?php
-// Connectez-vous à votre base de données ici
+
 $servername = "localhost";
 $username = "root";
 $password = "root";
 $db="pizzastage";
-// Connexion à la base de données
+
 $connexion = mysqli_connect($servername, $username, $password, $db);
 // Vérifier la connexion à la base de données
 if (!$connexion) {
