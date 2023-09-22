@@ -6,7 +6,7 @@ $password = "root";
 $db="pizzastage";
 
 $connexion = mysqli_connect($servername, $username, $password, $db);
-// Vérifier la connexion à la base de données
+
 if (!$connexion) {
     die("Erreur de connexion à la base de données: " . mysqli_connect_error());
 }
