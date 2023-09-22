@@ -84,8 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
     ?>
 
-<body style="background-color:#f8f9fa;">
-
     <div class="container">
         <h1>Bienvenue dans la Page d'Administration</h1>
 
