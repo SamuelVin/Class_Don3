@@ -82,21 +82,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_close($connexion);
     }
 }
+}
+
     ?>
-
-    <div class="container">
-        <h1>Bienvenue dans la Page d'Administration</h1>
-
-        <!-- Liens vers les pages d'affichage, de modification, d'ajout et de suppression -->
-        <ul>
-            <li><a href="Affichage.php">Afficher les données</a></li>
-            <li><a href="Modification.php">Modifier les données</a></li>
-            <li><a href="Ajout.php">Ajouter des données</a></li>
-            <li><a href="suppression.php">Supprimer des données</a></li>
-        </ul>
-    </div>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
