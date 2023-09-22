@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
 
         // Fermer la connexion à la base de données
->>>>>>> b4857151efc148b0fca100ed617eed07ca735e7f
+
         mysqli_close($connexion);
     }
 }
