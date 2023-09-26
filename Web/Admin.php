@@ -115,13 +115,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #28a745; /* Couleur de fond du bouton de recherche */
         }
     </style>
-</head>
-<body>
+
     <header>
         <img id="logo" src="chemin/vers/votre/logo.png" alt="Logo de votre site">
         <button class="bouton">Utilisateur</button>
         <button id="bouton-recherche" class="bouton">Recherche</button>
     </header>
+
+    <style>
+        /* Styles pour le pied de page */
+        footer {
+            background-color: #333; /* Couleur de fond du pied de page */
+            color: #fff; /* Couleur du texte du pied de page */
+            padding: 20px 0; /* Espacement interne */
+            text-align: center; /* Alignement du contenu */
+        }
+
+        /* Style pour les liens du pied de page */
+        footer a {
+            color: #fff; /* Couleur des liens */
+            text-decoration: none; /* Suppression du soulignement des liens */
+            margin: 0 10px; /* Marge extérieure pour les liens */
+        }
+    </style>
+
+    <header>
+        <!-- Votre en-tête ici -->
+    </header>
+    
     <!-- Le reste de votre contenu web ici -->
 <div class="container">
         <h1>Bienvenue dans la Page d'Administration</h1>
