@@ -26,17 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: Affichage.php");
 }
 $connexion->close();
-?>
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+

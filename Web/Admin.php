@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-        
+
 <div class="container">
         <h1>Bienvenue dans la Page d'Administration</h1>
 
@@ -98,6 +98,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </div>
     
+
+
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
