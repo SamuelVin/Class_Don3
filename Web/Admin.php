@@ -90,7 +90,7 @@ foreach ($evenements as $evenement) {
     echo "<a href='evenement.php?id={$evenement['id']}'>Détails de l'événement <i class='fas fa-arrow-right'></i></a>";
     echo "</div>";
 }
-    ?>
+?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
