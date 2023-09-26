@@ -28,21 +28,52 @@
             } 
         }
         if(empty($_POST["selection"])){
-            $selectionErr = ", Erreur: Non Sélectioné";
+            $selectionErr = "Erreur: Non Sélectioné";
             $erreur=true;
         }else{
             $selection = test_input($_POST["selection"]);
+            $selectionErr = test_input($_POST["selection"]);
         }
-    }
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $dbname = "pizzastage";
+
+        //Connection
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+        //Verify connection
+        if($conn->connect_error){
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = 'SELECT Id FROM events';
+        if(empty($selection)){
+            //Do nothing
+        }elseif($selection=="Vert"){
+            $sql = 'UPDATE events SET SatisfactionVert=SatisfactionVert+1 WHERE Id=1';
+        }elseif($selection=="Jaune"){
+            $sql = 'UPDATE events SET SatisfactionJaune=SatisfactionJaune+1 WHERE Id=1';
+        }elseif($selection=="Rouge"){
+            $sql = 'UPDATE events SET SatisfactionRouge=SatisfactionRouge+1 WHERE Id=1';
+        }
+
+        if (mysqli_query($conn, $sql)){
+            //Succès
+        } else {
+            //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+        mysqli_close($conn);
+    } 
 ?>
 
-
-<form name="Form_A" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <a id="selectionValue" style="display:none" value="<?php echo $selection;?>"></a>
-    <input type="password" name="password" style="text-align:center; margin-top: 1%;" value="<?php echo $password;?>"></input> 
-    <input type="submit" style="text-align:center;" value=" Retour "></input>
+    
+    <input type="password" id="Input_Nip" name="password" style="text-align:center; margin-top: 1%;" value="<?php echo $password;?>"></input> 
+    <input type="submit" id="Input_Button" style="text-align:center;" value=" Retour "></input>
     <span class="error"><?php echo $passwordErr;?></span>
-</form>
+
     <h1 style="text-align:center; margin-top: 4%; margin-bottom: 3%">Comment était votre expérience?</h1>
     <div class="container" style="border: solid 2px grey; background-color: #f2f2f2;  border-radius: 100px">
         <form name="Form_B" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -59,12 +90,13 @@
             </div>
             <div class="row">
                 <div class="col-sm-1 justify-content center">
-                    <p class="d-flex" style="text-align: center; padding-left: 30px; width: 320px">Id="Id" <?php echo $selectionErr?> </p>
+                    <p class="d-flex" style="text-align: center; padding-left: 50px; width: 320px"><?php echo $selectionErr?> </p>
                 </div>
                 <div class="col-sm-10 justify-content center d-flex">
                     <input type="submit" style="margin: auto; width: 35%; height: 130%; background-color: #f2f2f2; font-weight: bolder; text-align: center"></input>
                 </div>
             </div>
+            <input type="hidden" id="selectionValue" name="selection" value="<?php echo $selection;?>"></input>
         </form>
     </div>
 
