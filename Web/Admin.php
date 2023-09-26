@@ -83,14 +83,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-foreach ($evenements as $evenement) {
-    echo "<div class='evenement'>";
-    echo "<h2><i class='fas fa-calendar evenement-icon'></i>{$evenement['nom']}</h2>";
-    echo "<p>{$evenement['description']}</p>";
-    echo "<a href='evenement.php?id={$evenement['id']}'>Détails de l'événement <i class='fas fa-arrow-right'></i></a>";
-    echo "</div>";
-}
 ?>
+        
+<div class="container">
+        <h1>Bienvenue dans la Page d'Administration</h1>
+
+        <!-- Liens vers les pages d'affichage, de modification, d'ajout et de suppression -->
+        <ul>
+            <li><a href="Affichage.php">Afficher les données</a></li>
+            <li><a href="Modification.php">Modifier les données</a></li>
+            <li><a href="Ajout.php">Ajouter des données</a></li>
+            <li><a href="suppression.php">Supprimer des données</a></li>
+        </ul>
+    </div>
+    
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
