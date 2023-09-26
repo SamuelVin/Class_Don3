@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire de Connexion</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         .rounded-container {
             border-radius:50%;
             padding: 100px;
-            background-color:lightblue;;
+            background-color:lightblue;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+
+
         }
+   
+    
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>   
@@ -43,13 +49,18 @@
         </div>
       
      <a href= "Web/Admin.php">
-        aaaaaaaaaaaaa
+     <div class="container">
+        <h1>Bienvenue dans la Page d'Administration</h1>
+
+        <!-- Liens vers les pages d'affichage, de modification, d'ajout et de suppression -->
+        <ul>
+            <li><a href="Affichage.php">Afficher les données</a></li>
+            <li><a href="Modification.php">Modifier les données</a></li>
+            <li><a href="Ajout.php">Ajouter des données</a></li>
+            <li><a href="suppression.php">Supprimer des données</a></li>
+        </ul>
+    </div>
      </a>
-
-        
-
-
-
 
     </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
