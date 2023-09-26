@@ -85,7 +85,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+    <style>
+        /* Style pour l'en-tête */
+        header {
+            background-color: #333; /* Couleur de fond de l'en-tête */
+            color: #fff; /* Couleur du texte */
+            padding: 10px 0; /* Espacement interne */
+            text-align: center; /* Alignement du contenu */
+        }
 
+        /* Style pour le logo */
+        #logo {
+            width: 100px; /* Largeur du logo */
+            height: 100px; /* Hauteur du logo */
+        }
+
+        /* Style pour les boutons */
+        .bouton {
+            background-color: #007bff; /* Couleur de fond du bouton */
+            color: #fff; /* Couleur du texte du bouton */
+            border: none; /* Suppression de la bordure */
+            padding: 10px 20px; /* Espacement interne */
+            margin: 10px; /* Marge extérieure */
+            cursor: pointer; /* Curseur de la souris */
+        }
+
+        /* Style pour le bouton de recherche */
+        #bouton-recherche {
+            background-color: #28a745; /* Couleur de fond du bouton de recherche */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="chemin/vers/votre/logo.png" alt="Logo de votre site">
+        <button class="bouton">Utilisateur</button>
+        <button id="bouton-recherche" class="bouton">Recherche</button>
+    </header>
+    <!-- Le reste de votre contenu web ici -->
 <div class="container">
         <h1>Bienvenue dans la Page d'Administration</h1>
 
@@ -98,12 +135,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </div>
     
-
-
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
