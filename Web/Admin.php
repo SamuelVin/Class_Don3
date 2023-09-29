@@ -92,24 +92,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             color: #fff; /* Couleur du texte */
             padding: 10px 0; /* Espacement interne */
             text-align: center; /* Alignement du contenu */
+            height: 110px;
+           
         }
 
         /* Style pour le logo */
         #logo {
-            width: 100px; /* Largeur du logo */
-            height: 100px; /* Hauteur du logo */
+            width: 110px; /* Largeur du logo */
+            height: 110px; /* Hauteur du logo */
+            float:left;   
         }
     </style>
 
     <header>
-        <img id="logo" src="pic_trulli.jpg" alt="Logo de votre site">
+    <img id="logo" src="../Image/logo.png" alt="Logo de votre site">
         
     </header>
 
 <!-- Le reste de votre contenu web ici -->
 <div class="container">
-        <h1>Bienvenue dans la Page d'Administration</h1>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+<div style="text-align: center;">
+<img id="icone" width="300px" height="300px" src="../Image/student_d.png" alt="icone etudiant">
+<br><br>
+</div>
+<div style="text-align: center;">
+<button type="button" class="btn btn-dark">cliquez ici</button> 
+</div>
+        
+<br><br><br>
         <!-- Liens vers les pages d'affichage, de modification, d'ajout et de suppression -->
         <ul>
             <li><a href="Affichage.php">Afficher les données</a></li>
@@ -118,7 +130,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li><a href="suppression.php">Supprimer des données</a></li>
         </ul>
     </div>
-<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+
+<div class= "container">
+<div style="text-align: center;">
+<img id="icone" width="300px" height="300px" src="../Image/picto_utilisateurs.png" alt="icone usager">
+<br><br>
+</div>
+<div style="text-align: center;">
+<button type="button" class="btn btn-dark">cliquez ici</button> 
+</div>
+</div>
+
+<br><br><br><br><br><br><br> <br> <br> <br> <br> <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 <br> <br> <br> <br> <br> <br>
 
     <style>
