@@ -32,6 +32,7 @@ CREATE TABLE `events` (
   `Lieu` varchar(255) NOT NULL,
   `NomEvenement` varchar(255) NOT NULL,
   `Departement` varchar(255) NOT NULL,
+  `Version` varchar(255) NOT NULL,
   `SatisfactionVert` int(11) NOT NULL,
   `SatisfactionJaune` int(11) NOT NULL,
   `SatisfactionRouge` int(11) NOT NULL

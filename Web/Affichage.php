@@ -1,34 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
 
-<?php
+    <h1 style="text-align:center; margin-top: 4%; margin-bottom: 3%">Comment était votre expérience?</h1>
+    <div class="container" style="border: solid 2px grey; background-color: #f2f2f2;  border-radius: 100px">
+        <div class="row">
+        </div>
+    </div>
+    <div class="container" style="margin-top: 5%">
+        <a href="../Web/Admin.php" style="width: 100%; text-align: center; border: solid 2px grey; background-color: #f2f2f2;  border-radius: 100px; padding-left: 50%; ; padding-right: 50%">Hello!</a>
+    </div>
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$db="pizzastage";
-// Connexion à la base de données
-$connexion = mysqli_connect($servername, $username, $password, $db);
-// Vérifier la connexion à la base de données
-if (!$connexion) {
-    die("Erreur de connexion à la base de données: " . mysqli_connect_error());
-}
-
-$query = "SELECT * FROM votre_table";
-$result = mysqli_query($connexion, $query);
-
-// Afficher les données dans un tableau
-
-echo "<table>";
-while ($row = mysqli_fetch_assoc($result)) {
-    echo "<tr>";
-    echo "<td>" . $row['colonne1'] . "</td>";
-    echo "<td>" . $row['colonne2'] . "</td>";
-    
-// Ajoutez autant de colonnes que nécessaire
-    echo "<td><a href='Modification.php?id=" . $row['id'] . "'>Modifier</a></td>";
-    echo "<td><a href='Suppression.php?id=" . $row['id'] . "'>Supprimer</a></td>";
-    echo "</tr>";
-}
-echo "</table>";
-
-$connexion->close();
-?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
