@@ -11,11 +11,18 @@
 <h1 style="text-align:center; margin-top: 4%; margin-bottom: 3%">Modification d'évènement</h1>
 <?php
     // define variables and set to empty values
-    $dateErr = $lieuErr = $nomErr = $departementErr = $versionErr = $vertErr = $jauneErr = $rougeErr = "";
-    $date = $lieu = $nom = $departement = $version = $vert = $jaune = $rouge = "";
+    $idErr = $dateErr = $lieuErr = $nomErr = $departementErr = $versionErr = $vertErr = $jauneErr = $rougeErr = "";
+    $id = $date = $lieu = $nom = $departement = $version = $vert = $jaune = $rouge = "";
     $erreur = false;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       
+        if(empty($_POST["Id"])){
+            $idErr = "* Id absent";
+            $erreur = true;
+        } else {
+            $id = test_input($_POST["Id"]);//
+        }
         if(empty($_POST["Date"])){
             $dateErr = "* Date absent";
             $erreur = true;
@@ -78,13 +85,14 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        echo $date . ", " . $lieu . ", " . $nom . ", " . $departement . ", " . $version . ", " . $vert . ", " . $jaune . ", " . $rouge . ", ";
-        $sql = "UPDATE events SET NomDepartement='$nom' WHERE id=1";
+        //echo $id . ", " . $date . ", " . $lieu . ", " . $nom . ", " . $departement . ", " . $version . ", " . $vert . ", " . $jaune . ", " . $rouge . ", Ligne 87";
+        $sql = "UPDATE events SET Date='$date', Lieu='$lieu', NomEvenement='$nom', Departement='$departement', Version='$version', SatisfactionVert='$vert', SatisfactionJaune='$jaune', SatisfactionRouge='$rouge'  WHERE id='$id'";
+        //echo $sql;
 
         if (mysqli_query($conn, $sql)){
-            //Succès
+            //echo "<br>" . "Succès";
         } else {
-            //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
 
         mysqli_close($conn);
@@ -93,7 +101,7 @@
     if($_SERVER["REQUEST_METHOD"] != "POST" || $erreur == true) {}
     ?>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?id=".$_GET["id"]);?>">
 <table class="table">
         <thead>
             <tr>
@@ -102,10 +110,6 @@
                 <th scope="col">Lieu</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Departement</th>
-                <th scope="col">Version</th>
-                <th scope="col">Positif</th>
-                <th scope="col">Neutre</th>
-                <th scope="col">Négatif</th>
             </tr>
         </thead>
         <tbody>
@@ -136,18 +140,32 @@
         	if($row["Id"]==$_GET["id"]){
             echo "<tr>" . "<th scope='row'>" . 
             $row["Id"] . "</th>" . "<th>" . 
-            "<input type='text' name='race' value='$row[Date]'>" . "</th>" . "<th>" . 
-            "<input type='text' name='race' value='$row[Lieu]'>" . "</th>" . "<th>" .
-            "<input type='text' name='race' value='$row[NomEvenement]'>" . "</th>" . "<th>" .
-            "<input type='text' name='race' value='$row[Departement]'>" . "</th>" . "<th>" .
-            "<input type='text' name='race' value='$row[Version]'>" . "</th>" . "<th>" .
-            "<input type='text' name='race' value='$row[SatisfactionVert]'>" . "</th>" . "<th>" .
-            "<input type='text' name='race' value='$row[SatisfactionJaune]'>" . "</th>" . "<th>" .
-            "<input type='text' name='race' value='$row[SatisfactionRouge]'>" . "</th>" . "</tr>";
+            "<input type='text' name='Date' value='$row[Date]'>" . "</th>" . "<th>" . 
+            "<input type='text' name='Lieu' value='$row[Lieu]'>" . "</th>" . "<th>" .
+            "<input type='text' name='NomEvenement' value='$row[NomEvenement]'>" . "</th>" . "<th>" .
+            "<input type='text' name='Departement' value='$row[Departement]'>" . "</th>" . "</tr>" . "<tr>" . 
+            "<th scope='col'>" . "Id" . "</th>" .
+            "<th scope='col'>" . "Version" . "</th>" .
+            "<th scope='col'>" . "Positif" . "</th>" .
+            "<th scope='col'>" . "Neutre" . "</th>" .
+            "<th scope='col'>" . "Négatif" . "</th>" . "</tr>" .
+            "<tr>" . "<th>" . $row["Id"] . "</th>" . "<th>" . 
+            "<input type='text' name='Version' value='$row[Version]'>" . "</th>" . "<th>" .
+            "<input type='text' name='SatisfactionVert' value='$row[SatisfactionVert]'>" . "</th>" . "<th>" .
+            "<input type='text' name='SatisfactionJaune' value='$row[SatisfactionJaune]'>" . "</th>" . "<th>" .
+            "<input type='text' name='SatisfactionRouge' value='$row[SatisfactionRouge]'>" . "</th>" . "</tr>" . "<tr>" . 
+            "<th>" . "<input type='hidden' name='Id' value='" . $_GET["id"] ."'>" . "</th>" . "</tr>";
             }
         }
     } else {
       echo "0 results";
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 
     $conn->close();

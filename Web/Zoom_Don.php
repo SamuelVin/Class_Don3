@@ -78,9 +78,6 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        echo $date . ", " . $lieu . ", " . $nom . ", " . $departement . ", " . $version . ", " . $vert . ", " . $jaune . ", " . $rouge . ", ";
-        $sql = "UPDATE events SET NomDepartement='$nom' WHERE id=1";
-
         if (mysqli_query($conn, $sql)){
             //Succès
         } else {
@@ -101,10 +98,6 @@
                 <th scope="col">Lieu</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Departement</th>
-                <th scope="col">Version</th>
-                <th scope="col">Positif</th>
-                <th scope="col">Neutre</th>
-                <th scope="col">Négatif</th>
             </tr>
         </thead>
         <tbody>
@@ -133,16 +126,22 @@
       	while($row = $result->fetch_assoc()) {
         	//Faire un bel affichage de notre data!
         	if($row["Id"]==$_GET["id"]){
-            echo "<tr>" . "<th scope='row'>" . 
-            $row["Id"] . "</th>" . "<th>" .
-            $row["Date"] . "</th>" . "<th>" . 
-            $row["Lieu"] . "</th>" . "<th>" . 
-            $row["NomEvenement"] . "</th>" . "<th>" . 
-            $row["Departement"] . "</th>" . "<th>" . 
-            $row["Version"] . "</th>" . "<th>" . 
-            $row["SatisfactionVert"] . "</th>" . "<th>" . 
-            $row["SatisfactionJaune"] . "</th>" . "<th>" . 
-            $row["SatisfactionRouge"] . "</th>" . "</tr>";
+                echo "<tr>" . "<th scope='row'>" . 
+                "<a style='font-weight: normal; font-size:20px'>" . $row["Id"] . "</a>" . "</th>" . "<th>" . 
+                "<a style='font-weight: normal; font-size:20px'>" . $row["Date"] . "</a>" . "</th>" . "<th>" . 
+                "<a style='font-weight: normal; font-size:20px'>" . $row["Lieu"] . "</a>" . "</th>" . "<th>" .
+                "<a style='font-weight: normal; font-size:20px'>" . $row["NomEvenement"] . "</a>" . "</th>" . "<th>" .
+                "<a style='font-weight: normal; font-size:20px'>" . $row["Departement"] . "</a>" . "</th>" . "</tr>" . "<tr>" . 
+                "<th scope='col'>" . "Id" . "</th>" .
+                "<th scope='col'>" . "Version" . "</th>" .
+                "<th scope='col'>" . "Positif" . "</th>" .
+                "<th scope='col'>" . "Neutre" . "</th>" .
+                "<th scope='col'>" . "Négatif" . "</th>" . "</tr>" . "<tr>" . "<th>" .
+                "<a style='font-weight: normal; font-size:20px'>" . $row["Id"] . "</a>" . "</th>" . "<th>" . 
+                "<a style='font-weight: normal; font-size:20px'>" . $row["Version"] . "</a>" . "</th>" . "<th>" .
+                "<a style='font-weight: normal; font-size:20px'>" . $row["SatisfactionVert"] . "</a>" . "</th>" . "<th>" .
+                "<a style='font-weight: normal; font-size:20px'>" . $row["SatisfactionJaune"] . "</a>" . "</th>" . "<th>" .
+                "<a style='font-weight: normal; font-size:20px'>" . $row["SatisfactionRouge"] . "</a>" . "</th>" . "</tr>";
             }
         }
     } else {
