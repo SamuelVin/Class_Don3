@@ -167,26 +167,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-    <style>
-/* Styles pour le pied de page */
-        footer {
-            background-color:rgb(9,45,116) ; /* Couleur de fond du pied de page */
-            color: white; /* Couleur du texte du pied de page */
-            padding:20px 0; /* Espacement interne */
-            
-        }
-
-/* Style pour les liens du pied de page */
-        footer a {
-            color: #fff; /* Couleur des liens */
-            text-decoration: none; /* Suppression du soulignement des liens */
-            margin: 0 10px; /* Marge extérieure pour les liens */
-        }
-    </style>
-
-    <header>
-        <!-- Votre en-tête ici -->
-    </header>
+    
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

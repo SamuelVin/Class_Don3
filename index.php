@@ -7,8 +7,9 @@
     <title>Formulaire de Connexion</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
+
     <style>
+
         .rounded-container {
             border-radius:50%;
             padding:100px;
@@ -31,7 +32,7 @@
         
 <div class="text-center">
             <i class="fas fa-user fa-3x"></i>
-            <h2>Connexion</h2> <br>
+            <h2>Connexion</h2><br>
         </div>               
 <?php
     if (isset($erreur_message)) {
