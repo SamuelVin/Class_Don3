@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 .image-left,
 .image-right{
-    width:500px; 
+    width:400px; 
     box-sizing: border-box;
     float: left;
     padding: 10px;
@@ -135,40 +135,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
   <div class= "image-left" >
   <img id="icone" width="500px" height="500px" src="../Image/student_d.png" alt="icone etudiant">
-  <br><br>
-  <div style="text-align:center;">
+  <br><br><br><br>
+  <a href="Affichage.php">
+  <div style="text-align:right;">
   <button type="button" class="btn btn-dark">cliquez ici</button>
   </div>
+  </a>
   </div>
   <br><br>
   <div class= "image-right">
   <div style="text-align:center;">
   <img id="icone" width="600px" height="600px" src="../Image/picto_utilisateurs.png" alt="icone usager">
-  <button type="button" class="btn btn-dark">cliquez ici</button>
+  
   </div>  
   </div> 
- 
-<br><br><br>
-        <!-- Liens vers les pages d'affichage, de modification, d'ajout et de suppression -->
-        <ul>
-
-  <ul>     
-  
-            <li><a href="Affichage.php">Afficher les données</a></li>
-            <li><a href="Modification.php">Modifier les données</a></li>
-            <li><a href="Ajout.php">Ajouter des données</a></li>
-            <li><a href="suppression.php">Supprimer des données</a></li>
-        </ul>
-        
-    </div>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br> <br> <br> <br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-    
-    
+     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
