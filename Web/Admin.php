@@ -10,13 +10,11 @@
 <body>
  
 <?php
-
 // Configuration de la base de données
 $servername = "localhost";
 $username = "root";
 $password = "root";
 $db="pizzastage";
-
 
 // Connexion à la base de données
 $connexion = mysqli_connect($servername, $username, $password, $db);
@@ -70,14 +68,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $erreur_message = "Nom d'utilisateur incorrect.";
             }
 
-            // Fermer le statement
+// Fermer le statement
             mysqli_stmt_close($stmt);
         } else {
             die("Erreur de requête: " . mysqli_error($connexion));
         }
         
 
-        // Fermer la connexion à la base de données
+// Fermer la connexion à la base de données
 
         mysqli_close($connexion);
     }
@@ -92,30 +90,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             color: #fff; /* Couleur du texte */
             padding: 10px 0; /* Espacement interne */
             text-align: center; /* Alignement du contenu */
+            height: 110px;
             height: 100px;
         
         }
 
         /* Style pour le logo */
         #logo {
-            width: 100px; /* Largeur du logo */
-            height: 100px; /* Hauteur du logo */
+            width: 150px; /* Largeur du logo */
+            height:110px; /* Hauteur du logo */
+            float:left;
+           margin-bottom:20px;
+           padding-top: -20px;
+        }
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin:0 auto;
+    overflow: hidden;
+
+}
+
+.image-left,
+.image-right{
+    width:500px; 
+    box-sizing: border-box;
+    float: left;
+    padding: 10px;
+   
+}
+.image-left img,
+.image-right img {
+    width: 100%; /* Pour s'assurer que l'image remplit la largeur de son conteneur */
+    height: auto; /* Pour maintenir les proportions de l'image */
         }
     </style>
 
     <header>
-        <img id="logo" src="logo.png" alt="Logo de votre site">
-        
+    <img id="logo" src="../Image/logo.png" alt="">     
     </header>
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 <!-- Le reste de votre contenu web ici -->
 <div class="container">
+  <div class= "image-left" >
+  <img id="icone" width="500px" height="500px" src="../Image/student_d.png" alt="icone etudiant">
+  <br><br>
+  <div style="text-align:center;">
+  <button type="button" class="btn btn-dark">cliquez ici</button>
+  </div>
+  </div>
+  <br><br>
+  <div class= "image-right">
+  <div style="text-align:center;">
+  <img id="icone" width="600px" height="600px" src="../Image/picto_utilisateurs.png" alt="icone usager">
+  <button type="button" class="btn btn-dark">cliquez ici</button>
+  </div>  
+  </div> 
+ 
+<br><br><br>
+        <!-- Liens vers les pages d'affichage, de modification, d'ajout et de suppression -->
+        <ul>
 
-<img id="happy" src="happy2.png" alt="">
-
-  <h1>Bienvenue dans la Page d'Administration</h1>
   <ul>     
-  <button type="button" class="btn btn-light">Cliquez ici</button>
+  
             <li><a href="Affichage.php">Afficher les données</a></li>
             <li><a href="Modification.php">Modifier les données</a></li>
             <li><a href="Ajout.php">Ajouter des données</a></li>
@@ -123,32 +161,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
         
     </div>
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br>
+<br> <br> <br> <br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <style>
-        /* Styles pour le pied de page */
-        footer {
-            background-color:rgb(9,45,116) ; /* Couleur de fond du pied de page */
-            color: white; /* Couleur du texte du pied de page */
-            padding:20px 0; /* Espacement interne */
-            
-        }
 
-        /* Style pour les liens du pied de page */
-        footer a {
-            color: #fff; /* Couleur des liens */
-            text-decoration: none; /* Suppression du soulignement des liens */
-            margin: 0 10px; /* Marge extérieure pour les liens */
-        }
-    </style>
-
-    <header>
-        <!-- Votre en-tête ici -->
-    </header>
     
     
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
