@@ -82,20 +82,72 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_close($connexion);
     }
 }
-    ?>
+}
 
-    <div class="container">
-        <h1>Bienvenue dans la Page d'Administration</h1>
+?>
+    <style>
+        /* Style pour l'en-tête */
+        header {
+            background-color:rgb(9,45,116); /* Couleur de fond de l'en-tête */
+            color: #fff; /* Couleur du texte */
+            padding: 10px 0; /* Espacement interne */
+            text-align: center; /* Alignement du contenu */
+            height: 100px;
+        
+        }
 
-        <!-- Liens vers les pages d'affichage, de modification, d'ajout et de suppression -->
-        <ul>
+        /* Style pour le logo */
+        #logo {
+            width: 100px; /* Largeur du logo */
+            height: 100px; /* Hauteur du logo */
+        }
+    </style>
+
+    <header>
+        <img id="logo" src="logo.png" alt="Logo de votre site">
+        
+    </header>
+<br><br><br><br><br><br><br>
+<!-- Le reste de votre contenu web ici -->
+<div class="container">
+
+<img id="happy" src="happy2.png" alt="">
+
+  <h1>Bienvenue dans la Page d'Administration</h1>
+  <ul>     
+  <button type="button" class="btn btn-light">Cliquez ici</button>
             <li><a href="Affichage.php">Afficher les données</a></li>
             <li><a href="Modification.php">Modifier les données</a></li>
             <li><a href="Ajout.php">Ajouter des données</a></li>
             <li><a href="suppression.php">Supprimer des données</a></li>
         </ul>
+        
     </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 
+    <style>
+        /* Styles pour le pied de page */
+        footer {
+            background-color:rgb(9,45,116) ; /* Couleur de fond du pied de page */
+            color: white; /* Couleur du texte du pied de page */
+            padding:20px 0; /* Espacement interne */
+            
+        }
+
+        /* Style pour les liens du pied de page */
+        footer a {
+            color: #fff; /* Couleur des liens */
+            text-decoration: none; /* Suppression du soulignement des liens */
+            margin: 0 10px; /* Marge extérieure pour les liens */
+        }
+    </style>
+
+    <header>
+        <!-- Votre en-tête ici -->
+    </header>
+    
+    
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
