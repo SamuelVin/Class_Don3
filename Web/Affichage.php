@@ -71,6 +71,7 @@
                 <th scope="col">Zoom</th>
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
+                <th scope="col">Évènement</th>
             </tr>
         </thead>
         <tbody>
@@ -102,7 +103,8 @@
         	echo "<tr>" . "<th scope='row'>" . $row["NomEvenement"] . "</th>" . "<th>" . $row["Version"] . "</th>" . "<th>" . $row["Date"] . "</th>" . "<th>" .
             "<a href='Zoom_Don.php?id=" . $row["Id"] . "'>" . "<img style='max-height: 60px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/1024px-Magnifying_glass_icon.svg.png'" . "</th>" . "<th>" .
             "<a href='Modification_Don.php?id=" . $row["Id"] . "'>" . "<img style='max-height: 60px' src='https://th.bing.com/th/id/R.f71b0b45feaf4924d063181778d4680c?rik=Z9j37Y2xiV9qvg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_388620.png&ehk=HHAXuQ3ZoeLe8q8kaSNqZ5uo%2fs8TBLUetN1G7CtXqxQ%3d&risl=&pid=ImgRaw&r=0'" . "</a>"  . "</th>" . "<th>" .
-            "<a href='Suppression_Don.php?id=" . $row["Id"] . "'>" . "<img style='max-height: 60px' src='https://th.bing.com/th/id/OIP.SSvWW9H9PwEgeTXKfxZoCgHaHZ?w=206&h=206&c=7&r=0&o=5&pid=1.7'"
+            "<a href='Suppression_Don.php?id=" . $row["Id"] . "'>" . "<img style='max-height: 60px' src='https://th.bing.com/th/id/OIP.SSvWW9H9PwEgeTXKfxZoCgHaHZ?w=206&h=206&c=7&r=0&o=5&pid=1.7'" . "</th>" . "<th>" .
+            "<a href='Satisfaction_Student.php?id=" . $row["Id"] . "'>" . "<img style='max-height: 60px' src='https://www.icone-png.com/png/45/45058.png'"
             . "</th>" . "</tr>";
 		}
     } else {
