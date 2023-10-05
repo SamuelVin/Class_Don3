@@ -8,64 +8,22 @@
     <title>Document</title>
 </head>
 <body class="container-fluid">
-<style>
-
-      /* Style pour l'en-tête */
-      header {
-            background-color:rgb(9,45,116); /* Couleur de fond de l'en-tête */
-            color: #fff; /* Couleur du texte */
-            padding: 10px 0; /* Espacement interne */
-            text-align: center; /* Alignement du contenu */
-            height: 110px;
-            height: 100px;
-        
-        }
-
-        /* Style pour le logo */
-        #logo {
-            width: 150px; /* Largeur du logo */
-            height:110px; /* Hauteur du logo */
-            float:left;
-           margin-bottom:20px;
-           padding-top: -20px;
-        }
-
-.container{
-    width: 100%;
-    max-width: 1200px;
-    margin:0 auto;
-    overflow: hidden;
-
-}
-
-.image-left,
-.image-right{
-    width:500px; 
-    box-sizing: border-box;
-    float: left;
-    padding: 10px;
-   
-}
-.image-left img,
-.image-right img {
-    width: 100%; /* Pour s'assurer que l'image remplit la largeur de son conteneur */
-    height: auto; /* Pour maintenir les proportions de l'image */
-        }
-    </style>
-
-    <header>
-    <img id="logo" src="../Image/logo.png" alt="">     
-    </header>
-
-</style>
 
 <?php
-    $passwordErr = $selectionErr = "";
-    $password = $selection = "";
+    $idErr = $passwordErr = $selectionErr = "";
+    $id = $password = $selection = "";
     $erreur = false;
     $nip = "4390";
 
+    $id = $_GET["id"];
+
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["Id"])){
+            $idErr = "* Id absent";
+            $erreur = true;
+        } else {
+            $id = test_input($_POST["Id"]);//
+        }
         if(empty($_POST["password"])){
             //$passwordErr = "Aucun Pin";
         }else{
@@ -102,11 +60,11 @@
         if(empty($selection)){
             //Do nothing
         }elseif($selection=="Vert"){
-            $sql = 'UPDATE events SET SatisfactionVert=SatisfactionVert+1 WHERE Id=1';
+            $sql = "UPDATE events SET SatisfactionVert=SatisfactionVert+1 WHERE Id='$id'";
         }elseif($selection=="Jaune"){
-            $sql = 'UPDATE events SET SatisfactionJaune=SatisfactionJaune+1 WHERE Id=1';
+            $sql = "UPDATE events SET SatisfactionJaune=SatisfactionJaune+1 WHERE Id='$id'";
         }elseif($selection=="Rouge"){
-            $sql = 'UPDATE events SET SatisfactionRouge=SatisfactionRouge+1 WHERE Id=1';
+            $sql = "UPDATE events SET SatisfactionRouge=SatisfactionRouge+1 WHERE Id='$id'";
         }
 
         if (mysqli_query($conn, $sql)){
@@ -124,9 +82,11 @@
     <input type="submit" id="Input_Button" style="text-align:center;" value=" Retour "></input>
     <span class="error"><?php echo $passwordErr;?></span>
 
+
     <h1 style="text-align:center; margin-top: 4%; margin-bottom: 3%">Comment était votre expérience?</h1>
     <div class="container" style="border: solid 2px grey; background-color: #f2f2f2;  border-radius: 100px">
-        <form name="Form_B" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]."?id=".$_GET["id"]);?>">
+            
             <div class="row">
                 <div class="col-sm-4 justify-content center" style="height: 375px">
                     <img id="Reaction_1" src="../Image/happy2.png" class="d-flex" style="margin: auto; margin-top: 40px; height: 75%; border-radius: 50px; border: solid #595959 5px"/>
@@ -140,12 +100,14 @@
             </div>
             <div class="row">
                 <div class="col-sm-1 justify-content center">
-                    <p class="d-flex" style="text-align: center; padding-left: 50px; width: 320px"><?php echo $selectionErr?> </p>
+                    <p class="d-flex" style="text-align: center; padding-left: 50px; width: 320px"><?php /*cho $selectionErr*/?> </p>
                 </div>
                 <div class="col-sm-10 justify-content center d-flex">
+                    
                     <input type="submit" style="margin: auto; width: 35%; height: 130%; background-color: #f2f2f2; font-weight: bolder; text-align: center"></input>
                 </div>
             </div>
+            <?php "<input type='hidden' name='Id' value='" . $_GET["id"] ."'>" ?>
             <input type="hidden" id="selectionValue" name="selection" value="<?php echo $selection;?>"></input>
         </form>
     </div>

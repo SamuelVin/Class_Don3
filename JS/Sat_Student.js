@@ -33,7 +33,7 @@ input_button.addEventListener("click", goAdmin)
 function goAdmin(){
     const nip = 4390;
     if(input_nip.value==nip){
-        document.location.href = "../Web/Admin.php";
+        document.location.href = "../Web/Affichage.php";
     }else{
         alert("Mots de passe inccorect");
     }
