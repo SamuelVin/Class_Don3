@@ -8,6 +8,55 @@
     <title>Document</title>
 </head>
 <body>
+<style>
+      /* Style pour l'en-tête */
+      header {
+            background-color:rgb(9,45,116); /* Couleur de fond de l'en-tête */
+            color: #fff; /* Couleur du texte */
+            padding: 10px 0; /* Espacement interne */
+            text-align: center; /* Alignement du contenu */
+            height: 110px;
+            height: 100px;
+        
+        }
+
+        /* Style pour le logo */
+        #logo {
+            width: 150px; /* Largeur du logo */
+            height:110px; /* Hauteur du logo */
+            float:left;
+           margin-bottom:20px;
+           padding-top: -20px;
+        }
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin:0 auto;
+    overflow: hidden;
+
+}
+
+.image-left,
+.image-right{
+    width:500px; 
+    box-sizing: border-box;
+    float: left;
+    padding: 10px;
+   
+}
+.image-left img,
+.image-right img {
+    width: 100%; /* Pour s'assurer que l'image remplit la largeur de son conteneur */
+    height: auto; /* Pour maintenir les proportions de l'image */
+        }
+    </style>
+
+    <header>
+    <img id="logo" src="../Image/logo.png" alt="">     
+    </header>
+</style>
+
 <h1 style="text-align:center; margin-top: 4%; margin-bottom: 3%">Zoom sur un évènement</h1>
 <?php
     // define variables and set to empty values

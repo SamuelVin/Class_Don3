@@ -35,6 +35,65 @@
             <h2>Connexion</h2><br>
         </div>               
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $username=$_POST["Nom d'utilisateur"];
+
+    $password= $_POST["password"];
+
+    $password= sha1($password,false);
+
+    echo $password;
+
+// Verifier si l'usager est dans la BD,activer
+
+    $servername = "localhost";
+
+    $username = "root";
+
+    $password = "root";
+
+    $db="pizzastage";
+
+   // Établir la connexion
+
+   $connexion = new mysqli($servername, $username , $password, $db );
+
+   // Vérifier la connexion
+
+   if ($connexion->connect_error) {
+
+       die("Échec de la connexion : " . $connexion->connect_error);
+
+   }
+
+   // Requête SQL pour vérifier l'authentification
+
+   $requete = "SELECT * FROM users WHERE Username = '$username' AND Password = '$password'" ;
+
+   $resultat = $connexion->query($requete);
+
+   if ($resultat->num_rows > 0) {
+
+       $row= $resultat->fetch_assoc();
+
+       echo "Connexion réussie !";
+
+       $_SESSION["connexion"]= true;
+
+       // Vous pouvez rediriger l'utilisateur vers une page sécurisée ici
+
+   } else {
+
+       echo "Nom d'utilisateur ou mot de passe incorrect.";
+
+   }
+
+   // Fermer la connexion
+
+   $connexion->close();
+
+}
     if (isset($erreur_message)) {
         echo '<p style="color: red;">' . $erreur_message . '</p>';
     }
