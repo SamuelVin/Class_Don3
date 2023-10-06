@@ -128,7 +128,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 
     <header>
-    <img id="logo" src="../Image/logo.png" alt="">     
+    <img id="logo" src="../Image/logo.png" alt="">
+    <a style="margin-left: 700px; color: black; text-decoration-line: none; background-color: #F0F0F0; padding: 4px; padding-left: 19px; padding-right: 19px; border: solid #858585 1px; border-radius: 3.5px" href="../index.php">Déconnexion</a>  
     </header>
 
 <!-- Le reste de votre contenu web ici -->
@@ -155,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
   </div>  
   </div> 
-     
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
