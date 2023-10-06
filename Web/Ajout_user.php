@@ -93,6 +93,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
+        $passwordA = sha1($passwordA);
         //echo $id . ", " . $date . ", " . $lieu . ", " . $nom . ", " . $departement . ", " . $version . ", " . $vert . ", " . $jaune . ", " . $rouge . ", Ligne 87";
         $sql = "INSERT INTO users (Username, Password, Email)
         VALUES ('$usernameA', '$passwordA', '')";

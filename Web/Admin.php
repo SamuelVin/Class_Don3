@@ -130,23 +130,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
     <img id="logo" src="../Image/logo.png" alt="">     
     </header>
-<br><br><br><br><br><br><br><br><br><br><br>
+
 <!-- Le reste de votre contenu web ici -->
-<div class="container-fluid d-flex" style="justify-content: center">
+<div class="container-fluid d-flex" style="justify-content: center; padding-top: 50px">
   <div class= "image-left" >
-  <img id="icone" width="500px" height="500px" src="../Image/student_d.png" alt="icone etudiant">
-  <br><br><br><br>
-  <a href="Affichage.php">
-  <div style="text-align:right;">
-  <button type="button" class="btn btn-dark">cliquez ici</button>
-  </div>
-  </a>
-  </div>
+  <img id="icone" style="height: 380px" src="../Image/student_d.png" alt="icone etudiant">
+  <a href="Affichage_user.php">
+    <div style="text-align:center; padding-top: 30px">
+        <button type="button" class="btn btn-dark">Tableau des utilisateurs</button>
+    </div>
+    </a>
+</div>
   <br><br>
   <div class= "image-right">
   <div style="text-align:center;">
-  <img id="icone" width="600px" height="600px" src="../Image/picto_utilisateurs.png" alt="icone usager">
-  
+
+  <img id="icone" style="height: 380px" src="../Image/picto_utilisateurs.png" alt="icone usager">
+    <a href="Affichage.php">
+    <div style="text-align:center;">
+        <button type="button" class="btn btn-dark">Tableau des évènements</button>
+    </div>
+    </a>
+
+    
   </div>  
   </div> 
      

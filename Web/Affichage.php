@@ -58,6 +58,7 @@
     </header>
 
     <h1 style="text-align:center; margin-top: 4%; margin-bottom: 3%">Tableau des évènements?</h1>
+    <a style="margin-left: 10px; color: black; text-decoration-line: none; background-color: #F0F0F0; padding: 4px; padding-left: 19px; padding-right: 19px; border: solid #858585 1px; border-radius: 3.5px" href="Admin.php">Retour</a>
     <div class="container d-flex" style="margin-top: 1%; justify-content: center">
         <a href="../Web/Ajout_Don.php" style="width: 100%; height: 50px; text-align: center; border: solid 2px grey; background-color: #f2f2f2;  border-radius: 100px; padding-left: 50%; ; padding-right: 50%; color: black; text-decoration-line: none; font-size: 30px">Ajouter</a>
     </div>
