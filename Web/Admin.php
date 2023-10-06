@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 <br><br><br><br><br><br><br><br><br><br><br>
 <!-- Le reste de votre contenu web ici -->
-<div class="container">
+<div class="container-fluid d-flex" style="justify-content: center">
   <div class= "image-left" >
   <img id="icone" width="500px" height="500px" src="../Image/student_d.png" alt="icone etudiant">
   <br><br><br><br>
